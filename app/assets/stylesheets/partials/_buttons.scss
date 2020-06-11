@@ -1,0 +1,84 @@
+$button-padding: 1rem 2rem;
+$font-size: 14px;             // 1 factor below base 16px in modular type scale
+$button-bgcolor: #45BF55;     // the primary brand color
+$button-border-width: 0px;    // border width for all form inputs
+$button-color-hover: #45BF55; // the light/white brand color
+$color-text-hover: #FFF;
+$color-text: #FFF;
+
+.edit-profile-btn{
+
+  padding: $button-padding;
+  font-size: $font-size;
+  background-color: $button-bgcolor;
+  border-width:$button-border-width;
+  top:40px;
+  top: 16px;
+position: relative;
+
+}
+
+a.edit-profile-btn, a.view-profile-btn{
+  color: $color-text;
+  text-decoration:none;
+
+}
+
+.view-profile-btn{
+  padding: $button-padding;
+  font-size: $font-size;
+  background-color: $button-bgcolor;
+  border-width:$button-border-width;
+  top:40px;
+  top: 16px;
+position: relative;
+margin-left:10px;
+
+}
+
+
+.button-standard, button.add-ing{
+
+padding: $button-padding;
+font-size: $font-size;
+background-color: $button-bgcolor;
+border-width:$button-border-width;
+
+a{
+color: $color-text;
+}
+
+}
+
+.actions{
+
+input {
+
+  padding: $button-padding;
+  font-size: $font-size;
+  background-color: $button-bgcolor;
+  border-width:$button-border-width;
+  border-radius: 17px;
+color: #fff;
+
+}
+
+
+}
+
+
+
+
+
+
+
+// @mixin mealbox-button-theme($color, $button-bgcolor) {
+//     color: $color;
+//     border-color: $color;
+//     background-color: transparent;
+//
+//     &:hover {
+//         color: $color-text;
+//         background-color: $button-bgcolor;
+//     }
+// }

@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\mailers",
+    "\\app\\views",
+    "\\app\\views\\devise",
+    "\\app\\views\\devise\\registrations",
+    "\\app\\views\\partials",
+    "\\app\\views\\recipes",
+    "\\app\\views\\static_pages",
+    "\\app\\views\\transactions"
+  ],
+  "SelectedNode": "\\app\\views\\recipes\\edit.html.erb",
+  "PreviewInSolutionExplorer": false
+}

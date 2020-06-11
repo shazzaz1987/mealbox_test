@@ -1,0 +1,46 @@
+
+<div class="hero-header-home <%= @query %>">
+  <div class="inner-text">
+  <p class="p2">Mealed!</p>
+
+  <div class="col-xs-8 col-xs-offset-2">
+    <%= form_tag searchdb_path, method: :post, remote: true, class: 'hero_search' do %>
+      <div class="input-group search-meal-app">
+              <div class="input-group-btn search-panel">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span id="search_concept">Filter By</span> <span class="caret"></span>
+                  </button>
+
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#All">All</a></li>
+                    <% @header_cuisine_list.each do |cuisine| %>
+                       <li><a href="#<%= cuisine %>"><%= cuisine %></a></li>
+                    <% end %>
+                  </ul>
+              </div>
+              <input type="hidden" name="cuisine" value="all" id="search_param">
+              <input type="text" class="form-control" id="search_query" name="query" placeholder="Search term...">
+              <span class="input-group-btn">
+                  <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+              </span>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+<ul class="tags-cuisines">
+   <% @header_cuisine_list.each do |cuisine| %>
+     <li><a href="" class="hero-cuisine" value="<%= cuisine %>"><%= cuisine %></a></li>
+<% end %>
+</ul>
+<% end %>
+<div class="section search_message">
+  <div class="recipe-all">
+    <div class="masonry-container hero_result">
+
+
+    </div>
+  </div>
+  <div style="clear:both;"></div>
+</div>

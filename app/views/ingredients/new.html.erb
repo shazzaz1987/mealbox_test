@@ -1,0 +1,24 @@
+<div class="section" id="ingredient-search">
+
+  <h1>Ingredients Search</h1>
+  <span class="headerLine"></span>
+
+
+<div class="ingredient-searchform-holder">
+<%= form_tag searchnutri_path, method: :post, remote: true, id: 'searchform' do %>
+  <%= label_tag(:query, "Search for:")%>
+  <input type="text" name="query" id="query" class="form-control">
+  <span class="input-group-btn">  <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></span>
+
+<% end %>
+
+<%= form_tag searchingredient_path, method: :post, remote: true, id: 'nutri_ing_form' do %>
+<%= hidden_field_tag 'nutri_id', "test" %>
+  <h2>Search Results</h2>
+  <ul class="searchcontainer">
+
+  </ul>
+<% end %>
+
+
+</div>

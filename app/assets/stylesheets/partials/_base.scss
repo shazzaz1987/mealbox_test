@@ -1,0 +1,85 @@
+// –  contains global styles, such as resets, typography, colors, etc.
+
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+
+
+// Font weights
+$light: 100;
+$regular: 400;
+$bold: 600;
+$margin-auto: auto;
+$text-shadows: 2px 2px 3px rgba(0, 0, 0, 0.6);
+
+$h1-font-size: 2em;
+$h2-font-size: 1.5em;
+$h3-font-size: 1.17em;
+$h4-font-size: 1.12em;
+$h5-font-size:.83em;
+$h6-font-size: .75em;
+// Base Font
+$base-font-family: 'Oxygen', sans-serif !important;
+$base-font-weight: $regular;
+$base-font-size: 13px;
+$base-line-height: 1.4;
+
+// Fixed Font
+$fixed-font-family: monospace;
+$fixed-font-size: 85%;
+$fixed-line-height: $base-line-height;
+
+$header-font-weight: $bold;
+
+h1 {
+  font-size: $h1-font-size;
+  font-family: $base-font-family;
+ }
+h2 {font-size: $h2-font-size; font-family: $base-font-family; }
+
+p{ font-size: $base-font-size; font-family: $base-font-family;}
+
+li{
+
+  a {
+  font-family: $base-font-family;
+}
+
+}
+
+.headerLine {
+    width: 160px;
+    height: 2px;
+    display: block;
+    margin: 0 auto;
+    background: #101F2E;
+    margin-bottom:40px;
+}
+
+.col-md-3.socialbars {
+    float: right;
+    top: 7px;
+}
+
+@media screen and (max-width:767px){
+
+.col-md-3.socialbars {
+    float: right;
+    top: -41px;
+}
+
+ul.intro-social-buttons > li {
+    display: inline-block !important;
+    margin-bottom: 20px;
+  }
+
+}
+
+.socialbars li a.btn{
+  border:0px;
+  background:none;
+}
+
+.socialbars li a i:before{
+  color: #fff;
+}

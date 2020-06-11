@@ -1,0 +1,167 @@
+<%= render "partials/featuredheroandsearch" %>
+
+<div class="card-container">
+
+
+
+  <div class="card u-clearfix">
+
+
+      <span class="subtle card-category"><a href="/recipes"> Recipes > </a> <%= @recipe.cuisine %></span>
+
+      <% if user_signed_in? || !user_signed_in? %>
+        <%= link_to 'Buy Recipe', new_transaction_path, class:'buy-recipe-btn' %>
+      <% end %>
+
+
+  <h2 class="card-title"><%= @recipe.name %> </h2>
+
+
+
+      <span class="holderviewservings">
+      <div class="show-recipe-views"><span> <span class="glyphicon glyphicon-eye-open views-icon"></span> <%= @recipe.views %><span class="per"> <b>views</b></span> </span> </div>
+      <div class="show-recipe-servings"><span>$<%= sprintf("%.2f", @recipe.costperserving) %><span class="per"> per <b>servings</b></span> </span> </div>
+      </span>
+
+
+
+<div class="col-md-7">
+<img src="<%= @recipe.image %>" alt="" class="card-media" />
+
+<% if user_signed_in? && (current_user.id == @recipe.user_id) %>
+
+<span class="edit-recipe-btn">
+<i class="fa fa-pencil-square-o"><%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %></i>
+</span>
+
+<span class="remove-recipe-btn">
+<i class="fa fa-trash-o"><%= link_to 'Remove', @recipe,
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %></i>
+
+<%end%>
+</span>
+
+<h3 id="username"> created by: <b><%= @user.name %></b> </h3>
+
+
+</div>
+
+
+<div class="card-body">
+  <div class="col-md-5 ingredientbox">
+  <h1><b> Ingredients</b> </h1>
+    <ul class="ingredients">
+        <% @recipe.recipe_ingredients.each do |recipe| %>
+        <li><%= recipe.quantity %></em> <%=recipe.ingredient.qtyunit %> <%=recipe.ingredient.name %>
+        </label></li>
+
+        <% end %>
+      </ul>
+
+        </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="card-container">
+<div class="col-md-7 instructionbox">
+
+<!--instructions area -->
+
+  <h1><b>Instructions</b></h1></br>
+  <ul>
+      <% @instructions.each_with_index do |i, index| %>
+        <% if i.length > 0 %>
+        Step <%=index%><%=i%></br></br></br>
+        <% end %>
+      <% end %>
+  </ul>
+</div>
+
+<div class="col-md-5 nutritionalvalue">
+
+  <!--nutritional value area-->
+  
+    <h1><b>Nutritional Value</b></h1>
+  <br/>
+
+
+
+<div class="boxes-mover">
+    <div class="col-md-4 box">
+        <span class="nutri-name">Total Fat</span>
+        <span class="nutri-result">
+      <%= @totalfat %>
+      </span>
+    </div>
+
+
+    <div class="col-md-4 box">
+        <span class="nutri-name">Total Calories</span>
+      <span class="nutri-result"><%= @totalcalories
+       %>cal</span>
+    </div>
+
+    <div class="col-md-4 box">
+        <span class="nutri-name">Cholestrol</span>
+      <span class="nutri-result"><%= @totalcholestrol
+       %>g</span>
+    </div>
+  </div>
+
+<div style="clear:both;"></div>
+
+<div class="dividerbox">&nbsp;</div>
+
+    <div class="col-md-5 box">
+        <span class="nutri-name">Carbohydrate</span>
+      <span class="nutri-result"><%= @totalcarbohydrate
+       %>g</span>
+    </div>
+
+    <div class="col-md-5 box">
+        <span class="nutri-name">Protein</span>
+      <span class="nutri-result"><%= @totalprotein
+       %>g</span>
+    </div>
+
+</div>
+
+</div>
+
+<!-- more from similar cuisines panel -->
+
+<div style="clear:both;"></div>
+
+<div class="card-container morefromcuisine">
+<div class="more-from-cuisine">
+<h2>More from <%= @recipe.cuisine %></h2>
+
+  <% @recipesfromother.first(4).each_with_index do |image, index| %>
+<div class="col-md-3">
+        <% if index == 0 %>
+<% end %>
+
+        <div class="thumbnail">
+            <a href="#"><img src="<%= image.image %>" alt=""></a>
+        </div>
+        <div class="caption">
+            <h4><%= image.name %></h4>
+        <p><%= link_to 'View Recipe', recipe_path(@recipe), class:'btn btn-primary view-recipe-btn' %> </p>
+        </div>
+
+      </li>
+
+</div>
+<% end %>
+
+ </div>
+
+ </div>
+
+    <div style="clear:both;"></div>
+
+    <br/><br/>
