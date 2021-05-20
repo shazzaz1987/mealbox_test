@@ -9,7 +9,7 @@ gem 'sassc', '>= 2.4.0'
 gem 'ffi', ' ~> 1.9'
 gem 'nio4r', '~> 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 4.3.5'
+gem 'puma', '~> 4.3.8'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 gem 'bootstrap-sass', '>= 3.4.1'
